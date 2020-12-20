@@ -1,0 +1,21 @@
+
+  
+.red-icon {
+    background-color: red;
+  }
+  .green-icon {
+    background-color: green;
+  }
+  .red-icon-border {
+    border-color: red;
+  }
+  .green-icon-border {
+    border-color: green;
+  }
+  #toast-container > div {
+    opacity: 1;
+  }
+  input
+  {
+   padding-left: 2%;
+  }

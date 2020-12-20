@@ -1,0 +1,132 @@
+ 
+   <div style="margin-left: 15%;">
+    <form #MyForm="ngForm" autocomplete="off" (submit)="Funsubmit(MyForm)">
+      <div class="form-group">
+        <input type="hidden" 
+        name="id" [value]="_Service.prodObj.id" 
+        
+        />
+      </div>
+  
+    <!--Name---->
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text  bg-white">
+              <i
+                class="fa fa-file-signature"
+                
+              ></i>
+            </div>
+          </div>
+          <input
+            name="name"
+            #Name="ngModel"
+            placeholder="Enter Product Name"       
+            required
+            minlength="3"
+            maxlength="10"
+            [(ngModel)]="_Service.prodObj.name"
+            class="form-control "
+          />
+        </div>
+      </div>
+  
+    <!--Image---->
+  
+    <div class="form-row">
+      <div class="form-group col-12">
+        <div class="input-group">
+          <div class="input-group-prepend"
+            > 
+            <div class="input-group-text bg-white" 
+             >
+              <i  
+              class="fas fa-images"
+            ></i>
+            </div>
+          </div>
+  
+          <img [src]="_Service.PicUrl" style="width:250px;height:200px" />
+          <input
+            type="file"
+            #Image 
+            accept="image/*"
+             (change)="handleFileInput($event)"
+          />
+        </div>
+      </div>
+    </div>
+    
+    <!--Price---->
+  
+    <div class="form-group">
+      <div class="input-group" >
+        <div class="input-group-prepend"
+          >
+          <div class="input-group-text  bg-white">
+            <i
+              class="fas fa-hand-holding-usd"
+              
+            ></i>
+          </div>
+        </div>
+        <input   
+        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+          name=" price"
+          #Name="ngModel"
+          placeholder="Enter  price"
+          
+          required
+          minlength="1"
+        
+          [(ngModel)]="_Service.prodObj. price"
+          class="form-control "
+        />
+      </div>
+    </div>
+  
+   <!--LastedUpdated---->
+  
+   <div class="form-group" 
+    >
+    <div class="input-group">
+     <!---------->
+     <div class="input-group-prepend" 
+      >
+      <div class="input-group-text  bg-white">
+        <i
+          class="fas fa-calendar-alt "
+          
+        ></i>
+      </div>
+    </div>
+     <!---------->
+       <div   
+        class="col-10"
+          >
+        <input  
+          id="txt_date" 
+        readonly
+        name="lastupdateted"
+        #Name="ngModel"
+         required  
+         minlength="10"
+         [(ngModel)]="_Service.prodObj.lastupdateted"
+        class="form-control "
+      />
+       </div>
+     
+    </div>
+  </div>
+  
+      <div class="form-group">
+        <button
+          type="submit"
+          class="form-control btn btn-success" >
+          <i class="fas fa-database"></i> submit
+        </button>
+      </div>
+    </form>
+  </div>
+  

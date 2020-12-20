@@ -1,0 +1,23 @@
+.lnk:link, .lnk:visited {
+    background-color:lightblue;
+    color: blue;
+    padding: 10px 25px;
+    text-align: center;font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    }
+   
+ 
+    .lnk:hover, .lnk:active {
+        background-color: #BD9696;
+        color:white;
+}
+nav
+{
+    margin-bottom: 40px;
+}
+.User_Table
+{
+    height: 200px;
+  scroll-behavior: auto;
+}

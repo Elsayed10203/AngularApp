@@ -1,0 +1,64 @@
+ 
+  <div >
+        <div class="row"  >
+           <div class="col-4 offset-6" >
+            <input class="form-control mr-sm-2"  type="search" (keyup)="MyFun($event)" [ngModel]="txt_search" (ngModelChange)="txt_search =$event" placeholder="Search" aria-label="Search">
+            </div>
+           <div class="col-2">
+            <button class="btn btn-outline-success my-2 my-sm-0"(click)="Search_Fun()"  >Search</button>
+ 
+           </div>
+           <div class="col-2">
+            <button class="btn btn-outline-primary my-2 my-sm-0  btnXcl"   >Export-Excell</button>
+
+           </div>
+       </div>
+  </div>
+ 
+
+
+<table class="table   User_Table" style="margin: 15px">
+    
+      <tr *ngFor="let Obj of _Serv.LstProductShow"  >
+        <td>
+
+         <div class="row"  >
+          <div class="col-4">
+            <img  src={{Obj.photo|srcpipe}} height="150" width="150" />
+            <h3 style="color: darkseagreen;text-align: center;border: 1px ;border-radius: 20px;" class="btn" >
+               {{ Obj.price }}<span style="color:green"> $</span></h3>
+               
+          </div>
+          <div>
+            <div >
+              <h2 style="color:teal;">{{ Obj.name }}</h2>
+            </div>
+            
+            
+             
+            <div>
+              <button type="button" class="btn btn-fefault cart">
+                <i class="fa fa-shopping-cart"></i>
+                Add to cart
+              </button>
+            </div>
+            <div style="margin-top: 30px;" >
+
+              <h3   class="btn btn-danger">
+                <span class="fa fa fa-calendar"  ><i></i></span>
+               {{ Obj.lastupdateted }}  
+              </h3>
+
+           </div>
+
+          </div>
+         </div>
+         
+        
+        </td>
+        
+           
+         
+      </tr>
+    </table>
+    

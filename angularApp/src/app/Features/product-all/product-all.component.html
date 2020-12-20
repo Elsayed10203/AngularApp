@@ -1,0 +1,56 @@
+
+
+<table class="table table-hover table-dark table-responsive"  >
+  <thead>
+      <tr class="btn-danger">
+        <th>
+         Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Photo
+        </th>
+        <th>
+          LstUpdated
+        </th> 
+        <th>
+          Delete
+        </th> 
+        <th>
+          Update
+        </th> 
+        
+      </tr>
+    </thead>
+    <tr *ngFor="let Obj of _Serv.listProducts" (click)="Update(Obj)">
+      <td>{{ Obj.name }}</td>
+      <td>{{ Obj.price }}</td>
+         <td>
+          <a href={{Obj.photo|srcpipe}}>ShowImage</a>
+        </td> 
+        <td>
+          {{ Obj.lastupdateted }}
+        </td>
+      <td>
+           <i
+          class="far fa-trash-alt fa-lg text-danger"
+          (click)="DeleteFun(Obj.id)"
+        >
+      </i>
+       
+      </td>
+      <td  >
+         <div  style="padding: 5px;text-align: center;" >
+          <i
+          class="far  fa-edit fa-lg text-primary"
+          (click)="Update(Obj)"
+        >
+      </i>
+         </div>
+      
+      </td>
+    </tr>
+  </table>
+  
